@@ -1,0 +1,44 @@
+body {
+    background-color: lightgrey;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform: translateY(-00px);
+    font-weight: 1000;
+}
+
+h1 {
+    font-size: 72px;
+    font-family: "Times New Roman", serif;
+    color: #ffffff;
+    text-shadow: -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000;
+}
+
+h2 {
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+}
+
+img {
+    position: relative;
+    bottom: 10%;
+    left: 25%;
+    transform: translateX(-0%);
+    width: 20%;
+    height: 50%;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 20px;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+}
+
+label {
+    color: white;
+    -webkit-text-stroke: 1px black;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/viewpost.css">
+    <meta charset="UTF-8">
+    <title>View a Post</title>
+    <style>
+        body {
+            background-image: url('https://images8.alphacoders.com/874/874022.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<h1>View a Post</h1>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="postvideo.html">Post A Video</a></li>
+        <li><a href="viewpost.html">View A Post</a></li>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+</nav>
+<div>
+    <video width="480" height="360" controls>
+        <source src="path/to/video.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="comments-section">
+    <h2>Comments</h2>
+    <ul id="comments-list">
+    </ul>
+    <form id="comment-form">
+        <label for="comment-input">Write a comment:</label>
+        <textarea id="comment-input" name="comment" rows="4" placeholder="Enter your comment"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<script>
+    document.getElementById('comment-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var commentInput = document.getElementById('comment-input').value;
+        if (commentInput.trim() !== '') {
+            var commentList = document.getElementById('comments-list');
+            var newComment = document.createElement('li');
+            newComment.className = 'comment';
+            newComment.innerHTML = '<span class="comment-author">User:</span><span class="comment-text">' + commentInput + '</span>';
+            commentList.appendChild(newComment);
+            document.getElementById('comment-input').value = '';
+        }
+    });
+</script>
+</body>
+</html>

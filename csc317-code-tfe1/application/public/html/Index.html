@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/Index.css">
+  <meta charset="UTF-8">
+  <title>Fetching Posts from an API route</title>
+  <style>
+    body {
+      background-image: url('https://images8.alphacoders.com/874/874022.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+<div id="photo-count"></div>
+<header class="banner">
+  <h1>Welcome to my CSC 317 Website!</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="login.html">Existing Users</a></li>
+    <li><a href="registration.html">New Users (Register Here!)</a></li>
+    <li><a href="postvideo.html">Post A Video</a></li>
+    <li><a href="viewpost.html">View A Post</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="#" id="logout-button">Logout</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-button">Search</button>
+  </div>
+  <div id="photos-container"></div>
+</div>
+
+<script>
+  var searchInput = document.getElementById("search-input");
+  var searchButton = document.getElementById("search-button");
+
+  searchButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    var searchTerm = searchInput.value.trim();
+    alert("Search term: " + searchTerm);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration</title>
+  <link rel="stylesheet" type="text/css" href="../css/registration.css">
+  <script src="../js/registration.js"></script>
+  <style>
+    body {
+      background-image: url('https://images8.alphacoders.com/874/874022.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+<header class="banner">
+  <h1>Registration</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="registration.html">Registration</a></li>
+    <li><a href="postvideo.html">Post A Video</a></li>
+    <li><a href="viewpost.html">View A Post</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+</nav>
+<form id="registration-form">
+  <div id="error-message"></div>
+  <label for="email">Enter Email</label>
+  <input type="text" name="email" id="email" placeholder="email"/>
+  <label for="username">Create a Username</label>
+  <input type="text" name="username" id="username" placeholder="Username"/>
+  <label for="password">Create a Password</label>
+  <input type="password" name="password" id="password" placeholder="Password"/>
+  <input type="submit" value="Submit">
+</form>
+<form>
+  <label for="age-confirm">Are you 13 years of age or older?</label>
+  <input type="radio" id="age-confirm" name="age-confirm" value="yes">
+  <label for="age-confirm">Yes</label>
+  <input type="radio" id="age-not-confirm" name="age-confirm" value="no">
+  <label for="age-not-confirm">No</label>
+  <label for="terms-of-service">Do you accept the TOS and privacy rules?</label>
+  <input type="radio" id="terms-of-service" name="terms-of-service" value="yes">
+  <label for="terms-of-service">Yes</label>
+  <input type="radio" id="no-terms-of-service" name="terms-of-service" value="no">
+  <label for="terms-of-service">No</label>
+  <button type="submit">Submit</button>
+</form>
+
+
+<script>
+  var form = document.getElementById("registration-form");
+  var errorMessage = document.getElementById("error-message");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    errorMessage.textContent = "";
+
+    if (!validateForm()) {
+      errorMessage.textContent = "There are errors in the form. Please check and try again.";
+    } else {
+      form.submit();
+    }
+  });
+
+  function validateForm() {
+    var username = document.forms["registration-form"]["username"].value.trim();
+    var password = document.forms["registration-form"]["password"].value;
+    var ageConfirm = document.querySelector('input[name="age-confirm"]:checked');
+    var termsOfService = document.querySelector('input[name="terms-of-service"]:checked');
+
+    if (username === "") {
+      errorMessage.textContent += "Please enter a username. ";
+      return false;
+    }
+
+    if (password === "") {
+      errorMessage.textContent += "Please enter a password. ";
+      return false;
+    }
+
+    if (!ageConfirm) {
+      errorMessage.textContent += "Please confirm if you are 13 years of age or older. ";
+      return false;
+    }
+
+    if (!termsOfService) {
+      errorMessage.textContent += "Please accept the TOS and privacy rules. ";
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>

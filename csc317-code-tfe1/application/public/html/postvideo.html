@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Post a Video</title>
+  <style>
+    body {
+      background-image: url('https://images8.alphacoders.com/874/874022.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: lightgrey;
+      font-family: "Roboto", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transform: translateY(-00px);
+      font-weight: 1000;
+    }
+
+    h1 {
+      font-size: 72px;
+      font-family: "Times New Roman", serif;
+      color: #ffffff;
+      text-shadow: -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000;
+    }
+
+    h2 {
+      color: #ffffff;
+      text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    }
+
+    img {
+      position: relative;
+      bottom: 10%;
+      left: 25%;
+      transform: translateX(-0%);
+      width: 20%;
+      height: 50%;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 20px;
+      text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    }
+
+    label {
+      color: white;
+      -webkit-text-stroke: 1px black;
+      text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="../css/postvideo.css">
+</head>
+<body>
+<header class="banner">
+  <h1>Post a Video</h1>
+</header>
+<nav>
+  <ul>
+    <fieldset>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><a href="postvideo.html">Post A Video</a></li>
+      <li><a href="viewpost.html">View A Post</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </fieldset>
+  </ul>
+</nav>
+<form>
+  <label for="title">Enter Post Title</label>
+  <input type="text" name="title" id="title" placeholder="title"/>
+  <label for="description">Describe Your Post</label>
+  <input type="text" name="description" id="description" placeholder="description"/>
+  <input type="submit" value="Submit">
+</form>
+<form>
+  <label for="video-input">Upload a Video (HTML5 formats only):</label>
+  <input type="file" id="video-input" name="video">
+  <button type="submit">Submit</button>
+</form>
+<fieldset>
+  <legend>Do you accept our acceptable use policy for uploading videos?</legend>
+  <div>
+    <input type="radio" id="acceptable-use-policy-yes" name="acceptable-use-policy" value="yes">
+    <label for="acceptable-use-policy-yes">Yes</label>
+  </div>
+  <div>
+    <input type="radio" id="acceptable-use-policy-no" name="acceptable-use-policy" value="no">
+    <label for="acceptable-use-policy-no">No</label>
+  </div>
+</fieldset>
+
+<script>
+  function selectOption(option) {
+    if (option === 'yes') {
+      document.getElementById('acceptable-use-policy-yes').checked = true;
+      document.getElementById('acceptable-use-policy-no').checked = false;
+    } else if (option === 'no') {
+      document.getElementById('acceptable-use-policy-yes').checked = false;
+      document.getElementById('acceptable-use-policy-no').checked = true;
+    }
+  }
+</script>
+</body>
+</html>
